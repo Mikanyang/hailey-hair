@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hailey Hair &amp; — Pooler, GA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+KR:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coral:    #FF6464;
+  --coral-dk: #D94848;
+  --dark:     #191926;
+  --dark2:    #22223A;
+  --cream:    #FFFCF8;
+  --warm:     #F5F0E8;
+  --muted:    #AAAAB8;
+  --line:     #EEEAE4;
+  --white:    #FFFFFF;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  font-family: 'Outfit', sans-serif;
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* ── FADE-IN ANIMATION ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+.d1 { animation-delay: 0.1s; }
+.d2 { animation-delay: 0.25s; }
+.d3 { animation-delay: 0.4s; }
+.d4 { animation-delay: 0.55s; }
+.d5 { animation-delay: 0.7s; }
+
+/* ══════════════════════════
+   HERO
+══════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 55% at 90% 10%, rgba(255,100,100,0.6) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 45% at 5%  90%, rgba(72,200,188,0.38) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(170,145,255,0.18) 0%, transparent 50%);
+}
+
+.hero-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+/* NAV */
+nav {
+  position: relative; z-index: 10;
+  padding: 28px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 700;
+  color: var(--white); letter-spacing: 0.5px;
+}
+.nav-logo span { color: var(--coral); font-style: italic; }
+
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 16px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: rgba(255,255,255,0.9); }
+
+.nav-cta {
+  background: var(--coral); color: var(--white) !important;
+  padding: 8px 20px; border-radius: 4px;
+  font-weight: 500 !important; letter-spacing: 1px !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--coral-dk) !important; }
+
+/* HERO CONTENT */
+.hero-body {
+  position: relative; z-index: 2;
+  padding: 0 60px 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 15px; letter-spacing: 4px; text-transform: uppercase;
+  color: rgba(255,255,255,0.38); margin-bottom: 24px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content:''; display:block; width:22px; height:1px;
+  background: rgba(255,100,100,0.5);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(88px, 10vw, 140px);
+  font-weight: 700; line-height: 0.9;
+  letter-spacing: -3px; color: var(--white);
+  margin-bottom: 28px;
+}
+.hero-title .accent { display: block; color: var(--coral); font-style: italic; }
+
+.hero-sub {
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 44px;
+}
+.hero-sub-en {
+  font-size: 24px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.7;
+}
+.hero-sub-ko {
+  font-family: 'Noto Serif KR', sans-serif;
+  font-size: 19px; font-weight: 300;
+  color: rgba(255,255,255,0.25); letter-spacing: 1px; line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--coral); color: var(--white);
+  padding: 16px 32px; border-radius: 4px;
+  font-size: 19px; font-weight: 500; letter-spacing: 1px;
+  text-decoration: none; text-transform: uppercase;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--coral-dk); transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.55);
+  padding: 16px 0;
+  font-size: 18px; letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.4); }
+
+/* HERO BOTTOM BAR */
+.hero-bar {
+  position: relative; z-index: 2;
+  margin: 0 60px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 20px 0;
+  display: flex; gap: 40px; flex-wrap: wrap;
+}
+.hero-bar-item { display: flex; flex-direction: column; gap: 3px; }
+.hbi-label {
+  font-size: 14px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,100,100,0.7);
+}
+.hbi-en { font-size: 18px; color: rgba(255,255,255,0.65); font-weight: 300; }
+.hbi-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.25); letter-spacing: 0.5px; }
+
+/* ══════════════════════════
+   SECTION SHARED
+══════════════════════════ */
+section { padding: 96px 60px; }
+
+.sec-eyebrow {
+  font-size: 15px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--coral); margin-bottom: 12px; font-weight: 600;
+}
+.sec-eyebrow-ko {
+  font-family: 'Noto Serif KR', sans-serif;
+  font-size: 14px; font-weight: 300; color: var(--muted);
+  letter-spacing: 2px; margin-left: 8px;
+}
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(50px, 5.5vw, 72px);
+  font-weight: 400; line-height: 1.1; letter-spacing: -1px;
+  color: var(--dark); margin-bottom: 6px;
+}
+.sec-title em { font-style: italic; color: var(--coral); }
+
+.sec-title-ko {
+  font-family: 'Noto Serif KR', sans-serif;
+  font-size: 20px; font-weight: 300; color: var(--muted);
+  letter-spacing: 3px; margin-bottom: 48px;
+}
+
+/* ══════════════════════════
+   SERVICES
+══════════════════════════ */
+#services { background: var(--cream); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.svc-card {
+  background: var(--white);
+  padding: 32px 28px;
+  display: flex; flex-direction: column;
+  transition: background 0.2s;
+}
+.svc-card:hover { background: #FFFAF7; }
+
+.svc-card-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.svc-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.ic-b { background: #EAF3FF; }
+.ic-r { background: #FFEAEE; }
+.ic-p { background: #F0EAFF; }
+.ic-t { background: #E2FAF7; }
+.ic-y { background: #FFF6E0; }
+.ic-g { background: #F0FFF0; }
+
+.svc-card-title-en { font-size: 20px; font-weight: 600; color: var(--dark); line-height: 1.2; }
+.svc-card-title-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 15px; font-weight: 300; color: var(--muted); letter-spacing: 1.5px; }
+
+.svc-rows { display: flex; flex-direction: column; gap: 0; flex: 1; }
+.svc-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px dotted #E8E4DE; gap: 8px;
+}
+.svc-row:last-child { border-bottom: none; }
+.svc-row-name { flex: 1; }
+.srn-en { font-size: 18px; color: #282838; font-weight: 400; }
+.srn-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; font-weight: 300; color: var(--muted); }
+.svc-row-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px; font-weight: 600; color: var(--dark); white-space: nowrap;
+  display: flex; flex-direction: column; align-items: flex-end;
+}
+.pfrom { font-size: 12px; font-family: 'Outfit', sans-serif; color: var(--muted); font-style: italic; }
+
+.badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 1.5px 5px; border-radius: 2px; vertical-align: middle; margin-left: 4px;
+}
+.bh { background: var(--coral); color: #fff; }
+.bn { background: #3EC9C0; color: #fff; }
+
+/* wide card spanning all 3 cols */
+.svc-card.wide { grid-column: 1 / -1; }
+.wide-inner {
+  display: flex; align-items: center; gap: 40px;
+}
+.wide-left { flex: 1; }
+.wide-tag { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--coral); margin-bottom: 4px; font-weight: 600; }
+.wide-name-en { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--dark); line-height: 1.2; }
+.wide-name-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 16px; font-weight: 300; color: var(--muted); letter-spacing: 2px; margin-top: 4px; }
+.wide-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.wide-chip {
+  font-size: 16px; color: #444;
+  background: var(--warm); border: 1px solid var(--line);
+  border-radius: 4px; padding: 5px 12px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.wide-chip-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; color: var(--muted); }
+.wide-price {
+  text-align: center;
+  background: var(--dark); border-radius: 10px; padding: 18px 28px;
+  min-width: 130px;
+}
+.wp-old { font-size: 18px; color: rgba(255,255,255,0.3); text-decoration: line-through; }
+.wp-new { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--coral); line-height: 1; }
+.wp-save { font-size: 15px; color: rgba(255,100,100,0.6); font-weight: 600; letter-spacing: 1px; margin-top: 4px; }
+.wp-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; color: rgba(255,255,255,0.25); margin-top: 6px; }
+
+/* ══════════════════════════
+   HOURS + INFO
+══════════════════════════ */
+#info { background: var(--dark); }
+#info .sec-title { color: var(--white); }
+#info .sec-title-ko { color: rgba(255,255,255,0.25); }
+#info .sec-eyebrow { color: var(--coral); }
+
+.info-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+
+/* Hours */
+.hours-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+}
+.day-col { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.day-en { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.3); }
+.day-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.18); }
+.day-box {
+  width: 100%; border-radius: 7px;
+  padding: 10px 4px; text-align: center;
+  font-size: 15px; line-height: 1.5; font-weight: 400;
+}
+.day-box-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 12px; display: block; }
+.d-reg  { background: rgba(255,100,100,0.12); color: rgba(255,140,140,0.9);  border: 1px solid rgba(255,100,100,0.15); }
+.d-reg  .day-box-ko { color: rgba(255,120,120,0.5); }
+.d-sat  { background: rgba(255,100,100,0.18); color: rgba(255,130,130,1);    border: 1px solid rgba(255,100,100,0.2); font-weight:600; }
+.d-sun  { background: rgba(255,100,100,0.22); color: rgba(255,100,100,1);    border: 1px solid rgba(255,100,100,0.25); font-weight:600; }
+.d-off  { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.2);  border: 1px solid rgba(255,255,255,0.06); font-style:italic; }
+.d-off  .day-box-ko { color: rgba(255,255,255,0.15); }
+
+.info-note {
+  margin-top: 16px;
+  font-size: 16px; color: rgba(255,255,255,0.3);
+  font-style: italic; letter-spacing: 0.3px;
+}
+.info-note-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 15px; color: rgba(255,255,255,0.18); }
+
+/* Info cards */
+.info-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.info-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 16px 20px;
+}
+.ic-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.ic-key { display: flex; flex-direction: column; gap: 2px; }
+.ic-key-en { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,100,100,0.8); }
+.ic-key-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.2); }
+.ic-val { text-align: right; }
+.ic-val-en { font-size: 18px; color: rgba(255,255,255,0.7); font-weight: 300; line-height: 1.6; }
+.ic-val-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.28); line-height: 1.7; }
+
+/* ══════════════════════════
+   REVIEW EVENT STRIP
+══════════════════════════ */
+.review-strip {
+  background: linear-gradient(135deg, #FFF8F2, #FFF0EA);
+  border-top: 1px solid #FFD6C0; border-bottom: 1px solid #FFD6C0;
+  padding: 56px 60px;
+  display: flex; align-items: center; gap: 48px;
+}
+.review-star { font-size: 64px; flex-shrink: 0; }
+.review-text { flex: 1; }
+.review-eyebrow { font-size: 15px; letter-spacing: 3px; text-transform: uppercase; color: var(--coral); font-weight: 600; margin-bottom: 10px; }
+.review-eyebrow-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; font-weight: 300; color: var(--muted); letter-spacing: 1.5px; margin-left: 8px; }
+.review-title-en {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px; font-weight: 400; color: var(--dark); line-height: 1.3; margin-bottom: 6px;
+}
+.review-title-en em { font-style: italic; color: var(--coral); }
+.review-body-en { font-size: 20px; color: #555; line-height: 1.8; font-weight: 300; }
+.review-body-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 18px; font-weight: 300; color: var(--muted); line-height: 1.9; margin-top: 6px; }
+.review-badge {
+  background: var(--dark); color: var(--white);
+  border-radius: 8px; padding: 16px 24px;
+  text-align: center; flex-shrink: 0; min-width: 120px;
+}
+.rb-stars { font-size: 25px; margin-bottom: 6px; }
+.rb-en { font-size: 16px; font-weight: 500; letter-spacing: 0.5px; color: rgba(255,255,255,0.8); }
+.rb-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.35); margin-top: 3px; }
+
+/* ══════════════════════════
+   LOCATION
+══════════════════════════ */
+#location { background: var(--warm); padding: 80px 60px; }
+
+.location-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  direction: ltr;
+}
+
+.location-layout > *:first-child { order: 1; }
+.location-layout > *:last-child  { order: 2; }
+
+.loc-map-placeholder {
+  aspect-ratio: 4/3;
+  background: var(--dark);
+  border-radius: 12px; overflow: hidden;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.loc-map-inner {
+  text-align: center;
+}
+.loc-map-pin { font-size: 46px; margin-bottom: 12px; }
+.loc-map-en { font-size: 19px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.7; }
+.loc-map-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 16px; color: rgba(255,255,255,0.28); letter-spacing: 0.5px; margin-top: 4px; }
+.loc-map-link {
+  display: inline-block; margin-top: 16px;
+  background: var(--coral); color: var(--white);
+  padding: 12px 22px; border-radius: 4px;
+  font-size: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+  text-decoration: none; transition: background 0.2s;
+}
+.loc-map-link:hover { background: var(--coral-dk); }
+
+.loc-details { display: flex; flex-direction: column; gap: 20px; }
+
+.loc-detail-item {
+  background: var(--white); border-radius: 10px;
+  border: 1px solid var(--line); padding: 18px 20px;
+}
+.ldi-label-en { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 2px; }
+.ldi-label-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 12px; font-weight: 300; color: var(--muted); margin-bottom: 8px; }
+.ldi-val-en { font-size: 19px; color: var(--dark); line-height: 1.6; font-weight: 400; }
+.ldi-val-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.7; margin-top: 3px; }
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+footer {
+  background: var(--dark);
+  padding: 44px 60px 32px;
+}
+
+.footer-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07); gap: 24px; flex-wrap: wrap;
+}
+
+.footer-brand {}
+.footer-logo-en { font-family: 'Playfair Display', serif; font-size: 35px; font-weight: 700; color: var(--white); }
+.footer-logo-en span { color: var(--coral); font-style: italic; }
+.footer-logo-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.28); letter-spacing: 4px; margin-top: 4px; }
+.footer-tagline-en { font-size: 18px; color: rgba(255,255,255,0.35); margin-top: 10px; font-weight: 300; }
+.footer-tagline-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 15px; color: rgba(255,255,255,0.18); letter-spacing: 0.5px; margin-top: 2px; }
+
+.footer-contact { display: flex; flex-direction: column; gap: 8px; }
+.footer-contact-row { display: flex; align-items: center; gap: 9px; }
+.fcr-icon { font-size: 19px; opacity: 0.6; }
+.fcr-en { font-size: 18px; color: rgba(255,255,255,0.55); font-weight: 300; }
+.fcr-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; color: rgba(255,255,255,0.22); }
+
+.footer-bottom {
+  padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+}
+.footer-copy { font-size: 15px; color: rgba(255,255,255,0.22); font-weight: 300; }
+.footer-note-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; color: rgba(255,255,255,0.15); }
+
+/* ══════════════════════════
+   SCROLL REVEAL
+══════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════════════════
+   RESPONSIVE (basic)
+══════════════════════════ */
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .nav-links { display: none; }
+  .hero-body { padding: 0 24px 60px; }
+  .hero-bar { margin: 0 24px; gap: 20px; }
+  section { padding: 64px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .svc-card.wide .wide-inner { flex-direction: column; }
+  .info-layout { grid-template-columns: 1fr; }
+  .location-layout { grid-template-columns: 1fr; }
+  .review-strip { flex-direction: column; padding: 44px 24px; gap: 24px; }
+  footer { padding: 36px 24px 24px; }
+  .footer-top { flex-direction: column; }
+  #location { padding: 64px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-ring" style="width:500px;height:500px;top:-160px;right:-160px;"></div>
+  <div class="hero-ring" style="width:260px;height:260px;bottom:-70px;left:-70px;"></div>
+  <div class="hero-ring" style="width:120px;height:120px;bottom:180px;right:80px;"></div>
+
+  <nav>
+    <div class="nav-logo">Hailey <span>Hair &amp;</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services · 서비스</a></li>
+      <li><a href="#info">Hours · 시간</a></li>
+      <li><a href="#location">Location · 위치</a></li>
+      <li><a href="tel:9125705517" class="nav-cta">Call Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-body">
+    <div class="hero-eyebrow fade-up d1">Hair Studio · Pooler, GA · 헤어 스튜디오</div>
+    <div class="hero-title fade-up d2">
+      Hailey
+      <span class="accent">Hair &amp;</span>
+    </div>
+    <div class="hero-sub fade-up d3">
+      <span class="hero-sub-en">Feel like you, only better.</span>
+      <span class="hero-sub-ko">더 나은 나를 만나는 곳.</span>
+    </div>
+    <div class="hero-actions fade-up d4">
+      <a href="tel:9125705517" class="btn-primary">📞 &nbsp;(912) 570-5517</a>
+      <a href="#services" class="btn-ghost">View Services &nbsp;→</a>
+    </div>
+  </div>
+
+  <div class="hero-bar fade-up d5">
+    <div class="hero-bar-item">
+      <span class="hbi-label">Address · 주소</span>
+      <span class="hbi-en">880 Towne Center Blvd Suite 103, Pooler, GA</span>
+      <span class="hbi-ko">880 타운 센터 블러바드 103호, 풀러</span>
+    </div>
+    <div class="hero-bar-item">
+      <span class="hbi-label">Phone · 전화</span>
+      <span class="hbi-en">(912) 570-5517</span>
+      <span class="hbi-ko">전화 문의 환영</span>
+    </div>
+    <div class="hero-bar-item">
+      <span class="hbi-label">Instagram</span>
+      <span class="hbi-en"><a href="https://www.instagram.com/haileyhairand" target="_blank" rel="noopener" style="color:var(--coral);">@haileyhairand</a></span>
+      <span class="hbi-ko">인스타그램 팔로우 환영</span>
+    </div>
+    <div class="hero-bar-item">
+      <span class="hbi-label">Closed · 휴무</span>
+      <span class="hbi-en">Tuesday</span>
+      <span class="hbi-ko">화요일 정기 휴무</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="sec-eyebrow reveal">Services <span class="sec-eyebrow-ko">서비스 메뉴</span></div>
+  <div class="sec-title reveal">What we <em>offer</em></div>
+  <div class="sec-title-ko reveal">가격표 · Price Menu</div>
+
+  <div class="services-grid reveal">
+
+    <!-- MEN -->
+    <div class="svc-card">
+      <div class="svc-card-head">
+        <div class="svc-icon ic-b">✂️</div>
+        <div>
+          <div class="svc-card-title-en">Men's Cut</div>
+          <div class="svc-card-title-ko">남성 커트</div>
+        </div>
+      </div>
+      <div class="svc-rows">
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Regular Cut <span class="badge bh">HOT</span></div><div class="srn-ko">일반 커트 · 샴푸 포함</div></div>
+          <div class="svc-row-price">$30</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Fade / Undercut</div><div class="srn-ko">페이드 / 언더컷</div></div>
+          <div class="svc-row-price">$40</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Kids Cut</div><div class="srn-ko">아동 커트 · 12세 이하</div></div>
+          <div class="svc-row-price">$22</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Senior Cut</div><div class="srn-ko">시니어 커트 · 60세 이상</div></div>
+          <div class="svc-row-price">$25</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WOMEN -->
+    <div class="svc-card">
+      <div class="svc-card-head">
+        <div class="svc-icon ic-r">💇‍♀️</div>
+        <div>
+          <div class="svc-card-title-en">Women's Cut</div>
+          <div class="svc-card-title-ko">여성 커트</div>
+        </div>
+      </div>
+      <div class="svc-rows">
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Cut + Blowout <span class="badge bh">HOT</span></div><div class="srn-ko">커트 + 드라이 · 샴푸 포함</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$55</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Cut Only</div><div class="srn-ko">커트만 · 드라이 제외</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$40</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Bang Trim</div><div class="srn-ko">앞머리 다듬기</div></div>
+          <div class="svc-row-price">$12</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Blowout Only</div><div class="srn-ko">드라이만</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$25</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR -->
+    <div class="svc-card">
+      <div class="svc-card-head">
+        <div class="svc-icon ic-p">🎨</div>
+        <div>
+          <div class="svc-card-title-en">Color</div>
+          <div class="svc-card-title-ko">염색 · 탈색</div>
+        </div>
+      </div>
+      <div class="svc-rows">
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Single Color</div><div class="srn-ko">단일 염색</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$70</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Bleach &amp; Tone</div><div class="srn-ko">탈색 + 토너</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$110</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Balayage <span class="badge bh">HOT</span></div><div class="srn-ko">발레아쥬</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$130</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Gray Coverage <span class="badge bn">NEW</span></div><div class="srn-ko">흰머리 커버</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$75</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERM -->
+    <div class="svc-card">
+      <div class="svc-card-head">
+        <div class="svc-icon ic-t">🌿</div>
+        <div>
+          <div class="svc-card-title-en">Perm &amp; Care</div>
+          <div class="svc-card-title-ko">파마 · 트리트먼트</div>
+        </div>
+      </div>
+      <div class="svc-rows">
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Digital Perm <span class="badge bh">HOT</span></div><div class="srn-ko">디지털 파마</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$120</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Magic Straight</div><div class="srn-ko">매직 스트레이트</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$130</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Deep Conditioning</div><div class="srn-ko">집중 트리트먼트</div></div>
+          <div class="svc-row-price"><span class="pfrom">from</span>$35</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Scalp Massage</div><div class="srn-ko">두피 마사지</div></div>
+          <div class="svc-row-price">$15</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="svc-card">
+      <div class="svc-card-head">
+        <div class="svc-icon ic-y">✨</div>
+        <div>
+          <div class="svc-card-title-en">Add-ons</div>
+          <div class="svc-card-title-ko">추가 서비스</div>
+        </div>
+      </div>
+      <div class="svc-rows">
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Keratin Shine</div><div class="srn-ko">케라틴 광택 트리트먼트</div></div>
+          <div class="svc-row-price">$25</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Toner / Gloss</div><div class="srn-ko">토너 처리</div></div>
+          <div class="svc-row-price">$30</div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-name"><div class="srn-en">Eyebrow Trim</div><div class="srn-ko">눈썹 정리</div></div>
+          <div class="svc-row-price">$10</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTICE -->
+    <div class="svc-card" style="background:#FFF8F4; border: none;">
+      <div style="height:100%; display:flex; flex-direction:column; justify-content:center; gap:16px;">
+        <div style="font-size: 12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--coral);">
+          Note · 안내
+        </div>
+        <div style="font-size: 16px;color:#555;line-height:1.8;font-weight:300;">
+          Prices may vary based on hair length and thickness.
+        </div>
+        <div style="font-family:'Noto Serif KR',sans-serif;font-size: 14px;font-weight:300;color:var(--muted);line-height:1.9;">
+          모발 길이 및 볼륨에 따라 가격이 달라질 수 있습니다.
+        </div>
+        <div style="width:32px;height:2px;background:var(--coral);opacity:0.4;"></div>
+        <div style="font-size: 15px;color:#777;line-height:1.8;font-weight:300;">
+          Walk-ins welcome.<br>Booking is recommended.
+        </div>
+        <div style="font-family:'Noto Serif KR',sans-serif;font-size: 14px;font-weight:300;color:var(--muted);line-height:1.9;">
+          예약 없이 방문 환영합니다.<br>예약을 권장드립니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- PACKAGE (wide) -->
+    <div class="svc-card wide" style="background: var(--warm);">
+      <div class="wide-inner">
+        <div class="wide-left">
+          <div class="wide-tag">✦ Best Value Package · 스페셜 패키지</div>
+          <div class="wide-name-en">Color &amp; Style Complete</div>
+          <div class="wide-name-ko">컬러 + 스타일링 풀패키지</div>
+          <div class="wide-chips">
+            <div class="wide-chip">Single Color <span class="wide-chip-ko">단일 염색</span></div>
+            <div class="wide-chip">Cut + Blowout <span class="wide-chip-ko">커트 + 드라이</span></div>
+            <div class="wide-chip">Deep Conditioning <span class="wide-chip-ko">트리트먼트</span></div>
+            <div class="wide-chip">Scalp Massage <span class="wide-chip-ko">두피 마사지 무료</span></div>
+          </div>
+        </div>
+        <div class="wide-price">
+          <div class="wp-old">$215</div>
+          <div class="wp-new">$175</div>
+          <div class="wp-save">SAVE $40</div>
+          <div class="wp-ko">할인 패키지</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ REVIEW EVENT ══ -->
+<div class="review-strip reveal">
+  <div class="review-star">⭐</div>
+  <div class="review-text">
+    <div class="review-eyebrow">Review Event <span class="review-eyebrow-ko">리뷰 이벤트</span></div>
+    <a href="https://maps.app.goo.gl/yMGDBZFPzZsYr2Qi6" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;"><div class="review-title-en">Leave a <em>5-star Google review</em> — win a gift! →</div></a>
+    <div class="review-body-en">Every month we raffle a special gift among customers who left us a 5-star review on Google. We'd love to hear about your experience!</div>
+    <div class="review-body-ko">구글에 별 5개 리뷰를 남겨주시면 추첨을 통해 소정의 상품을 드립니다 🎁<br>소중한 후기 감사합니다!</div>
+  </div>
+  <a href="https://maps.app.goo.gl/yMGDBZFPzZsYr2Qi6" target="_blank" rel="noopener" style="text-decoration:none;"><div class="review-badge">
+    <div class="rb-stars">⭐⭐⭐⭐⭐</div>
+    <div class="rb-en">Google Review</div>
+    <div class="rb-ko">구글 리뷰</div>
+  </div>
+</div>
+
+
+<!-- ══ HOURS + INFO ══ -->
+<section id="info">
+  <div class="sec-eyebrow reveal">Hours &amp; Info <span class="sec-eyebrow-ko">영업시간 · 안내</span></div>
+  <div class="sec-title reveal">When to <em>visit</em></div>
+  <div class="sec-title-ko reveal">영업시간 안내</div>
+
+  <div class="info-layout">
+
+    <div class="reveal">
+      <div class="hours-grid">
+        <div class="day-col">
+          <div class="day-en">Wed</div>
+          <div class="day-ko">수</div>
+          <div class="day-box d-reg">11am<br>–7:30<span class="day-box-ko">오전11시<br>–오후7:30</span></div>
+        </div>
+        <div class="day-col">
+          <div class="day-en">Thu</div>
+          <div class="day-ko">목</div>
+          <div class="day-box d-reg">11am<br>–7:30<span class="day-box-ko">오전11시<br>–오후7:30</span></div>
+        </div>
+        <div class="day-col">
+          <div class="day-en">Fri</div>
+          <div class="day-ko">금</div>
+          <div class="day-box d-reg">11am<br>–7:30<span class="day-box-ko">오전11시<br>–오후7:30</span></div>
+        </div>
+        <div class="day-col">
+          <div class="day-en">Sat</div>
+          <div class="day-ko">토</div>
+          <div class="day-box d-sat">10am<br>–7:30<span class="day-box-ko">오전10시<br>–오후7:30</span></div>
+        </div>
+        <div class="day-col">
+          <div class="day-en">Sun</div>
+          <div class="day-ko">일</div>
+          <div class="day-box d-sun">11am<br>–8pm<span class="day-box-ko">오전11시<br>–오후8시</span></div>
+        </div>
+        <div class="day-col">
+          <div class="day-en">Mon</div>
+          <div class="day-ko">월</div>
+          <div class="day-box d-reg">11am<br>–7:30<span class="day-box-ko">오전11시<br>–오후7:30</span></div>
+        </div>
+        <div class="day-col">
+          <div class="day-en">Tue</div>
+          <div class="day-ko">화</div>
+          <div class="day-box d-off">Closed<span class="day-box-ko">휴무</span></div>
+        </div>
+      </div>
+      <div class="info-note">
+        * Prices may vary by hair length &amp; volume.<br>
+        <span class="info-note-ko">* 모발 길이 및 볼륨에 따라 가격이 달라질 수 있습니다.</span>
+      </div>
+    </div>
+
+    <div class="info-cards reveal">
+      <div class="info-card">
+        <div class="ic-row">
+          <div class="ic-key"><span class="ic-key-en">Payment</span><span class="ic-key-ko">결제 수단</span></div>
+          <div class="ic-val"><div class="ic-val-en">Cash · Card · Zelle · Venmo</div><div class="ic-val-ko">현금 · 카드 · 젤 · 벤모</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="ic-row">
+          <div class="ic-key"><span class="ic-key-en">Appointment</span><span class="ic-key-ko">예약 안내</span></div>
+          <div class="ic-val"><div class="ic-val-en">Walk-ins welcome<br>Booking recommended</div><div class="ic-val-ko">워크인 환영 · 예약 권장</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="ic-row">
+          <div class="ic-key"><span class="ic-key-en">Cancellation</span><span class="ic-key-ko">취소 정책</span></div>
+          <div class="ic-val"><div class="ic-val-en">Please cancel 24 hrs in advance</div><div class="ic-val-ko">예약 24시간 전 취소 요망</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="ic-row">
+          <div class="ic-key"><span class="ic-key-en">Gratuity</span><span class="ic-key-ko">팁</span></div>
+          <div class="ic-val"><div class="ic-val-en">Not included in service price</div><div class="ic-val-ko">서비스 금액에 팁 미포함</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="ic-row">
+          <div class="ic-key"><span class="ic-key-en">Languages</span><span class="ic-key-ko">언어</span></div>
+          <div class="ic-val"><div class="ic-val-en">English · 한국어</div><div class="ic-val-ko">영어 · 한국어 모두 가능</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ LOCATION ══ -->
+<section id="location">
+  <div class="sec-eyebrow reveal">Location <span class="sec-eyebrow-ko">위치 안내</span></div>
+  <div class="sec-title reveal">Find <em>us</em></div>
+  <div class="sec-title-ko reveal">오시는 길</div>
+
+  <div class="location-layout reveal">
+
+    <!-- 상세 정보 (왼쪽) -->
+    <div class="loc-details">
+      <div class="loc-detail-item">
+        <div class="ldi-label-en">Address</div>
+        <div class="ldi-label-ko">주소</div>
+        <div class="ldi-val-en">880 Towne Center Blvd Suite 103<br>Pooler, GA 31322</div>
+        <div class="ldi-val-ko">880 타운 센터 블러바드 103호, 풀러, 조지아</div>
+      </div>
+      <div class="loc-detail-item">
+        <div class="ldi-label-en">Phone</div>
+        <div class="ldi-label-ko">전화</div>
+        <div class="ldi-val-en"><a href="tel:9125705517" style="color:var(--coral);text-decoration:none;">(912) 570-5517</a></div>
+        <div class="ldi-val-ko">전화 문의 환영합니다</div>
+      </div>
+      <div class="loc-detail-item">
+        <div class="ldi-label-en">Instagram</div>
+        <div class="ldi-label-ko">인스타그램</div>
+        <div class="ldi-val-en"><a href="https://www.instagram.com/haileyhairand" target="_blank" rel="noopener" style="color:var(--coral);text-decoration:none;">@haileyhairand</a></div>
+        <div class="ldi-val-ko">인스타그램 팔로우 환영합니다</div>
+      </div>
+      <div class="loc-detail-item">
+        <div class="ldi-label-en">Hours</div>
+        <div class="ldi-label-ko">영업시간</div>
+        <div class="ldi-val-en">
+          Mon · Wed – Fri &nbsp;11:00am – 7:30pm<br>
+          Sat &nbsp;10:00am – 7:30pm<br>
+          Sun &nbsp;11:00am – 8:00pm<br>
+          <span style="color:var(--coral);">Tue Closed · 화요일 휴무</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지도 iframe (오른쪽) -->
+    <div style="border-radius:12px; overflow:hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3351.12!2d-81.2557969!3d32.1422108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fba7503e2119a1%3A0x9834f54d081e37b2!2sHailey%20Hair!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+        width="100%"
+        height="420"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div style="background:var(--dark); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="font-size:14px; color:rgba(255,255,255,0.6); font-weight:300;">
+          880 Towne Center Blvd Suite 103, Pooler, GA
+        </div>
+        <a href="https://maps.app.goo.gl/yMGDBZFPzZsYr2Qi6" target="_blank" rel="noopener"
+          style="background:var(--coral); color:#fff; padding:8px 16px; border-radius:4px;
+                 font-size:12px; font-weight:500; letter-spacing:1px; text-transform:uppercase;
+                 text-decoration:none; white-space:nowrap; flex-shrink:0; margin-left:12px;">
+          Open in Maps
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-en">Hailey <span>Hair &amp;</span></div>
+      <div class="footer-logo-ko">헤일리 헤어 스튜디오</div>
+      <div class="footer-tagline-en">Feel like you, only better.</div>
+      <div class="footer-tagline-ko">더 나은 나를 만나는 곳.</div>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-row">
+        <span class="fcr-icon">📍</span>
+        <div><div class="fcr-en">880 Towne Center Blvd Suite 103, Pooler, GA 31322</div></div>
+      </div>
+      <div class="footer-contact-row">
+        <span class="fcr-icon">📞</span>
+        <div><div class="fcr-en">(912) 570-5517</div><div class="fcr-ko">전화 문의 환영</div></div>
+      </div>
+      <div class="footer-contact-row">
+        <span class="fcr-icon">📸</span>
+        <div><div class="fcr-en"><a href="https://www.instagram.com/haileyhairand" target="_blank" rel="noopener" style="color:var(--coral);">@haileyhairand</a></div><div class="fcr-ko">인스타그램</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Hailey Hair &amp; · Pooler, GA</div>
+    <div class="footer-note-ko">Tuesday Closed · 화요일 정기 휴무<br>Prices may vary by hair length &amp; volume · 모든 가격은 모발 상태에 따라 변동될 수 있습니다</div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
