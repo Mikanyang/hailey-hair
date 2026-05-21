@@ -477,6 +477,18 @@ footer {
 .footer-note-ko { font-family: 'Noto Serif KR', sans-serif; font-size: 14px; color: rgba(255,255,255,0.15); }
 
 /* ══════════════════════════
+   ABOUT LAYOUT
+══════════════════════════ */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: center;
+}
+.about-photo { position: relative; }
+.about-text  { padding-top: 20px; }
+
+/* ══════════════════════════
    SCROLL REVEAL
 ══════════════════════════ */
 .reveal {
@@ -496,11 +508,10 @@ footer {
   section { padding: 64px 24px; }
   .about-layout {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 40px !important;
   }
-  .about-layout > div { order: unset !important; }
-  .about-layout > div:first-child { order: 1 !important; }
-  .about-layout > div:last-child  { order: 2 !important; }
+  .about-photo { margin-bottom: 16px; }
+  .about-text  { padding-top: 0 !important; }
   #about { padding: 64px 24px !important; }
   .services-grid { grid-template-columns: 1fr; }
   .svc-card.wide .wide-inner { flex-direction: column; }
@@ -577,12 +588,10 @@ footer {
 <!-- ══ ABOUT ══ -->
 <section id="about" style="background: var(--dark); padding: 96px 60px;">
 
-  <div class="about-layout reveal" style="
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center;
-  ">
+  <div class="about-layout reveal">
 
-    <!-- 사진 (왼쪽 desktop / 첫번째 mobile) -->
-    <div style="position: relative; order: 1;">
+    <!-- 사진: HTML 첫번째 → 모바일 위, 데스크탑 왼쪽 -->
+    <div class="about-photo">
       <div style="
         aspect-ratio: 3/4;
         border-radius: 12px;
@@ -608,8 +617,8 @@ footer {
       </div>
     </div>
 
-    <!-- 텍스트 (오른쪽 desktop / 두번째 mobile) -->
-    <div style="padding-top: 20px; order: 2;">
+    <!-- 텍스트: HTML 두번째 → 모바일 아래, 데스크탑 오른쪽 -->
+    <div class="about-text">
       <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--coral); font-weight: 600; margin-bottom: 14px;">
         About · 소개
       </div>
