@@ -494,6 +494,14 @@ footer {
   .hero-body { padding: 0 24px 60px; }
   .hero-bar { margin: 0 24px; gap: 20px; }
   section { padding: 64px 24px; }
+  .about-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .about-layout > div { order: unset !important; }
+  .about-layout > div:first-child { order: 1 !important; }
+  .about-layout > div:last-child  { order: 2 !important; }
+  #about { padding: 64px 24px !important; }
   .services-grid { grid-template-columns: 1fr; }
   .svc-card.wide .wide-inner { flex-direction: column; }
   .info-layout { grid-template-columns: 1fr; }
@@ -573,8 +581,8 @@ footer {
     display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center;
   ">
 
-    <!-- 사진 -->
-    <div style="position: relative;">
+    <!-- 사진 (왼쪽 desktop / 첫번째 mobile) -->
+    <div style="position: relative; order: 1;">
       <div style="
         aspect-ratio: 3/4;
         border-radius: 12px;
@@ -600,8 +608,8 @@ footer {
       </div>
     </div>
 
-    <!-- 텍스트 -->
-    <div style="padding-top: 20px;">
+    <!-- 텍스트 (오른쪽 desktop / 두번째 mobile) -->
+    <div style="padding-top: 20px; order: 2;">
       <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--coral); font-weight: 600; margin-bottom: 14px;">
         About · 소개
       </div>
