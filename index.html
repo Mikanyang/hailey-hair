@@ -151,7 +151,7 @@ nav {
 }
 
 .hero-sub {
-  display: flex; flex-direction: column; gap: 4px; margin-bottom: 44px;
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 36px;
 }
 .hero-sub-en {
   font-size: 24px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.7;
@@ -164,6 +164,27 @@ nav {
 
 .hero-actions {
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+
+.hero-specialty {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, rgba(239,191,4,0.14) 0%, rgba(201,150,10,0.06) 100%);
+  border: 1px solid rgba(239,191,4,0.45);
+  border-radius: 8px;
+  padding: 13px 20px 13px 18px;
+  margin-bottom: 40px;
+  max-width: max-content;
+}
+.hero-specialty-star { color: var(--coral); font-size: 18px; line-height: 1; }
+.hero-specialty-text { display: flex; flex-direction: column; gap: 3px; }
+.hero-specialty-en {
+  font-size: 15px; font-weight: 600; color: #FFF8EC;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.hero-specialty-ko {
+  font-family: 'Noto Serif KR', sans-serif;
+  font-size: 14px; color: rgba(239,191,4,0.80); font-weight: 400;
+  letter-spacing: 1px;
 }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
@@ -637,6 +658,13 @@ footer {
     <div class="hero-sub fade-up d3">
       <span class="hero-sub-en">Feel like you, only better.</span>
       <span class="hero-sub-ko">더 나은 나를 만나는 곳.</span>
+    </div>
+    <div class="hero-specialty fade-up d4">
+      <span class="hero-specialty-star">★</span>
+      <div class="hero-specialty-text">
+        <span class="hero-specialty-en">Restoration Perm &amp; Magic Straight</span>
+        <span class="hero-specialty-ko">복구펌 · 복구매직 전문</span>
+      </div>
     </div>
     <div class="hero-actions fade-up d4">
       <a href="tel:9125705517" class="btn-primary">📞 &nbsp;(912) 570-5517</a>
