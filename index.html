@@ -342,6 +342,12 @@ section { padding: 96px 60px; }
   font-size: 21px; font-weight: 600; color: var(--dark); white-space: nowrap;
   display: flex; flex-direction: column; align-items: flex-end;
 }
+.svc-row-price.price-row { flex-direction: row; align-items: flex-end; gap: 8px; }
+.svc-row-price.price-row .px-now { display: flex; flex-direction: column; align-items: flex-end; line-height: 1; }
+.svc-row-price .strike {
+  font-size: 15px; color: var(--muted); text-decoration: line-through;
+  font-weight: 500; font-family: 'Playfair Display', serif;
+}
 .pfrom { font-size: 12px; font-family: 'Outfit', sans-serif; color: var(--muted); font-style: italic; }
 
 .svc-warn {
@@ -1056,8 +1062,8 @@ footer {
           <div class="svc-row-price"><span class="pfrom">from</span>$150</div>
         </div>
         <div class="svc-row">
-          <div class="svc-row-name"><div class="srn-en">Keratin Straightening <span class="badge bevent">EVENT</span> <span class="note">· lasts 2–3 mo., reduces frizz &amp; curl</span></div><div class="srn-ko">케라틴 스트레이트 · 2–3개월 지속</div></div>
-          <div class="svc-row-price"><span class="pfrom">from</span>$100</div>
+          <div class="svc-row-name"><div class="srn-en">Keratin Straightening <span class="badge bevent">EVENT</span><br><span class="note">lasts 2–3 mo., reduces frizz &amp; curl</span></div><div class="srn-ko">케라틴 스트레이트 · 2–3개월 지속</div></div>
+          <div class="svc-row-price price-row"><span class="strike">$150</span><span class="px-now"><span class="pfrom">from</span>$100</span></div>
         </div>
       </div>
     </div>
@@ -1095,7 +1101,7 @@ footer {
         </div>
         <div class="svc-row">
           <div class="svc-row-name"><div class="srn-en">Lash Extensions <span class="badge bevent">EVENT</span> <span class="note">· individual</span></div><div class="srn-ko">속눈썹 연장 · 개별</div></div>
-          <div class="svc-row-price">$90</div>
+          <div class="svc-row-price price-row"><span class="strike">$100</span>$90</div>
         </div>
         <div class="svc-row">
           <div class="svc-row-name"><div class="srn-en">Lash Fill <span class="note">· within 2 weeks of original</span></div><div class="srn-ko">래쉬 필 · 2주 이내</div></div>
@@ -1142,9 +1148,9 @@ footer {
   <div class="review-star">⭐</div>
   <div class="review-text">
     <div class="review-eyebrow">Review Event <span class="review-eyebrow-ko">리뷰 이벤트</span></div>
-    <a href="https://g.page/r/CbI3HghN9TSYEBM/review" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;"><div class="review-title-en">Leave a <em>5-star Google review</em> — win a gift! →</div></a>
-    <div class="review-body-en">Every month we raffle a special gift among customers who left us a 5-star review on Google. We'd love to hear about your experience!</div>
-    <div class="review-body-ko">구글에 별 5개 리뷰를 남겨주시면 추첨을 통해 소정의 상품을 드립니다 🎁<br>소중한 후기 감사합니다!</div>
+    <a href="https://g.page/r/CbI3HghN9TSYEBM/review" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;"><div class="review-title-en">Leave a <em>5-star review with a photo</em> — win a gift! →</div></a>
+    <div class="review-body-en">Every month we raffle a special gift among customers who leave us a <strong>5-star Google review with a photo</strong> of their visit. Photo is required to enter!</div>
+    <div class="review-body-ko">매월 <strong>사진을 포함한 별 5개 구글 리뷰</strong>를 남겨주신 고객님 중 추첨을 통해 소정의 상품을 드립니다 🎁<br>(사진 필수 · 소중한 후기 감사합니다!)</div>
   </div>
   <a href="https://g.page/r/CbI3HghN9TSYEBM/review" target="_blank" rel="noopener" style="text-decoration:none;"><div class="review-badge">
     <div class="rb-stars">⭐⭐⭐⭐⭐</div>
